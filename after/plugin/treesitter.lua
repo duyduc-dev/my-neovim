@@ -36,11 +36,11 @@ require("nvim-treesitter.configs").setup({
 	highlight = {
 		enable = true,
 
-		-- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+		-- NOTE  these are the names of the parsers and not the filetype. (for example if you want to
 		-- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
 		-- the name of the parser)
 		-- list of language that will be disabled
-		disable = { "c", "rust" },
+		-- disable = { "c", "rust" },
 		-- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
 		disable = function(lang, buf)
 			local max_filesize = 100 * 1024 -- 100 KB
@@ -68,7 +68,19 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 		enable_autocmd = false,
 	},
+	rainbow = {
+		enable = true,
+		-- list of languages you want to disable the plugin for
+		--disable = { "jsx", "cpp" },
+		-- Which query to use for finding delimiters
+		query = "rainbow-parens",
+		-- Highlight the entire buffer all at once
+		strategy = require("ts-rainbow").strategy.global,
+	},
+	indent = {
+		enable = true,
+	},
 })
-
+-- NOTE adsad
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }

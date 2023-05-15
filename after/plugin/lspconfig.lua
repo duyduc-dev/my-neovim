@@ -53,7 +53,7 @@ local on_attach = function(_, bufnr)
 end
 
 local servers = {
-	sumneko_lua = {
+	lua_ls = {
 		settings = {
 			Lua = {
 				diagnostics = {
@@ -66,7 +66,7 @@ local servers = {
 	tailwindcss = {},
 }
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 for key, _ in pairs(servers) do
 	nvim_lsp[key].setup({
 		on_attach = on_attach,

@@ -19,8 +19,9 @@ return require("packer").startup(function(use)
 		tag = "0.1.1",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
-
+	-- colorschema
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	--use("Mofiqul/dracula.nvim")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
@@ -63,6 +64,8 @@ return require("packer").startup(function(use)
 	use({ "hrsh7th/cmp-nvim-lua" })
 	use("hrsh7th/cmp-nvim-lsp-signature-help")
 	use("hrsh7th/cmp-vsnip")
+	use("hrsh7th/vim-vsnip")
+	use("hrsh7th/vim-vsnip-integ")
 	use({ "L3MON4D3/LuaSnip", requires = {
 		"rafamadriz/friendly-snippets",
 	} }) --snippet engine
@@ -104,7 +107,20 @@ return require("packer").startup(function(use)
 	use("dcampos/cmp-emmet-vim")
 	use("AndrewRadev/tagalong.vim")
 	use("axelvc/template-string.nvim")
+	use("mg979/vim-visual-multi")
 
+	use({ "m00qek/baleia.nvim", tag = "v1.3.0" })
+	use({
+		"samodostal/image.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
+
+	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+	use("yamatsum/nvim-cursorline")
+	use("monkoose/matchparen.nvim")
+	use("HiPhish/nvim-ts-rainbow2")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then

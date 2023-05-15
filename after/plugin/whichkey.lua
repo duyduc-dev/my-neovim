@@ -122,6 +122,14 @@ local mappings = {
 			"Diff",
 		},
 	},
+	v = {
+		name = "Vsnip",
+		o = { "<cmd>VsnipOpen<cr>", "Open Vsnip" },
+		e = { "<cmd>VsnipOpenEdit<cr>", "Edit Vsnip" },
+		s = { "<cmd>VsnipOpenSplit<cr>", "Vsnip Split" },
+		v = { "<cmd>VsnipOpenVsplit<cr>", "Vsnip Vsplit" },
+		y = { "<cmd>VsnipYank<cr>", "Vsnip Yank" },
+	},
 
 	l = {
 		name = "LSP",
@@ -175,7 +183,16 @@ local mappings = {
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
+	a = {
+		name = "Chat GPT",
+		c = { "<cmd>ChatGPT<cr>", "Chat GPT" },
+		r = { "<cmd>ChatGPTRun<cr>", "Chat GPT run" },
+		s = { "<cmd>ChatGPTAtcAs<cr>", "Chat GPT Action As" },
+		p = { "<cmd>ChatGPTCompleteCode<cr>", "Complete Code" },
+		e = { "<cmd>ChatGPTEditWithInstructions<cr>", "Edit With Instructions" },
+	},
 }
 
 which_key.setup(setup)
+
 which_key.register(mappings, opts)

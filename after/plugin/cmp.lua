@@ -62,9 +62,9 @@ local kind_icons = {
 	Value = " ",
 	Color = " ",
 	Keyword = " ",
+	TabNine = " ",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -127,6 +127,7 @@ cmp.setup({
 				luasnip = "[Snippet]",
 				buffer = "[Buffer]",
 				path = "[Path]",
+				cmp_tabnine = "[TN]",
 			})[entry.source.name]
 
 			local words = {}
@@ -204,6 +205,9 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "emmet_vim" },
 		{ name = "nvim_lsp_signature_help" },
+		{ name = "vsnip" },
+		{ name = "nvim_lua" },
+		{ name = "cmp_tabnine" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
