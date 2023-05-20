@@ -85,6 +85,7 @@ local mappings = {
 	},
 	["e"] = { "<cmd>NvimTreeFocus<cr>", "Focus Explorer" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
+	["w"] = { "<cmd>W!<cr>,", "Save" },
 	["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["f"] = {
@@ -164,14 +165,8 @@ local mappings = {
 	},
 	s = {
 		name = "Search",
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-		R = { "<cmd>Telescope registers<cr>", "Registers" },
-		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		C = { "<cmd>Telescope commands<cr>", "Commands" },
+		a = { "<cmd>Ag<cr>", "Search text with The Sliver Searcher" },
+		r = { "<cmd>Rg<cr>", "Search text with ripgrep" },
 	},
 	t = {
 		name = "Terminal",

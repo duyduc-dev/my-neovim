@@ -26,8 +26,14 @@ null_ls.setup({
 		null_ls.builtins.formatting.prettierd,
 		null_ls.builtins.diagnostics.eslint_d.with({
 			diagnostics_format = "[eslint] #{m}\n(#{c})",
+			condition = function(utils)
+				local cwd = utils.root
+				return utils.root_has_file("node_modules/.bin/eslint")
+					and (utils.root_has_file("yarn.lock") or utils.root_has_file("package-lock.json"))
+			end,
 		}),
 		null_ls.builtins.diagnostics.fish,
+		--	null_ls.builtins.completion.spell,
 		-- diagnostics.flake8
 	},
 	on_attach = function(client, bufnr)

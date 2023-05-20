@@ -41,6 +41,10 @@ local options = {
 	guifont = "monospace:h17", -- the font used in graphical neovim applications
 	whichwrap = "bs<>[]hl", -- which "horizontal" keys are allowed to travel to prev/next line
 	termguicolors = true,
+	spelllang = "en_us",
+	spell = true,
+	spellcapcheck = "[.?!]\\_[])'\"`’”]*\\s\\+\\w\\+\\|\\<[A-Z]\\w*\\>",
+	spelloptions = "camel",
 }
 
 for k, v in pairs(options) do

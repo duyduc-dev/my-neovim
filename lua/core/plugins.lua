@@ -22,6 +22,7 @@ return require("packer").startup(function(use)
 	-- colorschema
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	--use("Mofiqul/dracula.nvim")
+	use("folke/tokyonight.nvim")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
@@ -62,7 +63,9 @@ return require("packer").startup(function(use)
 	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
+	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-nvim-lsp-signature-help")
+	use("RRethy/vim-illuminate")
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/vim-vsnip")
 	use("hrsh7th/vim-vsnip-integ")
@@ -94,6 +97,7 @@ return require("packer").startup(function(use)
 
 	use({ "akinsho/toggleterm.nvim" })
 	use({ "windwp/nvim-ts-autotag" })
+	-- use("alvan/vim-closetag")
 	use("norcalli/nvim-colorizer.lua")
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -104,6 +108,7 @@ return require("packer").startup(function(use)
 	use({ "roobert/tailwindcss-colorizer-cmp.nvim" })
 
 	use("mattn/emmet-vim")
+	--use("aca/emmet-ls")
 	use("dcampos/cmp-emmet-vim")
 	use("AndrewRadev/tagalong.vim")
 	use("axelvc/template-string.nvim")
@@ -117,10 +122,25 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
-	use("yamatsum/nvim-cursorline")
 	use("monkoose/matchparen.nvim")
 	use("HiPhish/nvim-ts-rainbow2")
+	use({ "junegunn/fzf.vim", requires = {
+		"junegunn/fzf",
+	} })
+	use({ "barrett-ruth/import-cost.nvim", run = "sh install.sh yarn" })
+	use("lewis6991/impatient.nvim")
+
+	use("ludovicchabant/vim-gutentags")
+	use({ "kristijanhusak/vim-js-file-import", run = "npm install" })
+	use("folke/neodev.nvim")
+	use({
+		"SmiteshP/nvim-navic",
+		config = function()
+			require("config.breadcrumbs").setup()
+		end,
+		requires = "neovim/nvim-lspconfig",
+	})
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then

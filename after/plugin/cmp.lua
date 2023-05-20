@@ -8,6 +8,8 @@ if not snip_status_ok then
 	return
 end
 
+local cmp_window = require("cmp.config.window")
+
 -- vscode format
 require("luasnip.loaders.from_vscode").lazy_load()
 require("luasnip.loaders.from_vscode").lazy_load({ paths = vim.g.vscode_snippets_path or "" })
@@ -207,7 +209,6 @@ cmp.setup({
 		{ name = "nvim_lsp_signature_help" },
 		{ name = "vsnip" },
 		{ name = "nvim_lua" },
-		{ name = "cmp_tabnine" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -217,9 +218,31 @@ cmp.setup({
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		},
+		completion = cmp_window.bordered(),
 	},
 	experimental = {
 		ghost_text = false,
 		native_menu = false,
+	},
+})
+
+-- cmp.setup.cmdline(":", {
+-- 	mapping = cmp.mapping.preset.cmdline(),
+-- 	sources = cmp.config.sources({
+-- 		{ name = "path" },
+-- 	}, {
+-- 		{
+-- 			name = "cmdline",
+-- 			option = {
+-- 				ignore_cmds = { "Man", "!" },
+-- 			},
+-- 		},
+-- 	}),
+-- })
+
+cmp.setup.cmdline("/", {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = "buffer" },
 	},
 })

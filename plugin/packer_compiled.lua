@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
+  ["cmp-cmdline"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    url = "https://github.com/hrsh7th/cmp-cmdline"
+  },
   ["cmp-emmet-vim"] = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/cmp-emmet-vim",
@@ -128,11 +133,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
-  },
-  ["cmp-tabnine"] = {
-    loaded = true,
-    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
-    url = "https://github.com/tzachar/cmp-tabnine"
   },
   ["cmp-vsnip"] = {
     loaded = true,
@@ -159,6 +159,16 @@ _G.packer_plugins = {
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  fzf = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
+  },
+  ["fzf.vim"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/fzf.vim",
+    url = "https://github.com/junegunn/fzf.vim"
+  },
   ["git.nvim"] = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/git.nvim",
@@ -173,6 +183,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/image.nvim",
     url = "https://github.com/samodostal/image.nvim"
+  },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
+  ["import-cost.nvim"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/import-cost.nvim",
+    url = "https://github.com/barrett-ruth/import-cost.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -214,6 +234,11 @@ _G.packer_plugins = {
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/mini.indentscope",
     url = "https://github.com/echasnovski/mini.indentscope"
   },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
+  },
   ["noice.nvim"] = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/noice.nvim",
@@ -244,15 +269,16 @@ _G.packer_plugins = {
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
-  ["nvim-cursorline"] = {
-    loaded = true,
-    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/nvim-cursorline",
-    url = "https://github.com/yamatsum/nvim-cursorline"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-navic"] = {
+    config = { "\27LJ\2\n@\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\23config.breadcrumbs\frequire\0" },
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
   },
   ["nvim-notify"] = {
     loaded = true,
@@ -344,10 +370,30 @@ _G.packer_plugins = {
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   undotree = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/jiaoshijie/undotree"
+  },
+  ["vim-gutentags"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/vim-gutentags",
+    url = "https://github.com/ludovicchabant/vim-gutentags"
+  },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vim-js-file-import"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/vim-js-file-import",
+    url = "https://github.com/kristijanhusak/vim-js-file-import"
   },
   ["vim-visual-multi"] = {
     loaded = true,
@@ -372,6 +418,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-navic
+time([[Config for nvim-navic]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\23config.breadcrumbs\frequire\0", "config", "nvim-navic")
+time([[Config for nvim-navic]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
