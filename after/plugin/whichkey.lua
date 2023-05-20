@@ -92,6 +92,7 @@ local mappings = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find files",
 	},
+	["-"] = { "<cmd>NvimTreeCollapse<cr>", "Collapse folders in Explorer" },
 	m = {
 		name = "Minimap",
 		o = { "<cmd>lua require('codewindow').open_minimap()<cr>", "Open Minimap" },
