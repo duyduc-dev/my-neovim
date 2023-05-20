@@ -85,12 +85,19 @@ local mappings = {
 	},
 	["e"] = { "<cmd>NvimTreeFocus<cr>", "Focus Explorer" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["w"] = { "<cmd>W!<cr>,", "Save" },
+	["w"] = { "<cmd>w!<CR>,", "Save" },
 	["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["f"] = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find files",
+	},
+	m = {
+		name = "Minimap",
+		o = { "<cmd>lua require('codewindow').open_minimap()<cr>", "Open Minimap" },
+		c = { "<cmd>lua require('codewindow').close_minimap()<cr>", "Close Minimap" },
+		t = { "<cmd>lua require('codewindow').toggle_minimap()<cr>", "Toggle Minimap" },
+		s = { "<cmd>lua require('codewindow').toggle_focus()<cr>", "Switch to Minimap" },
 	},
 	p = {
 		name = "Packer",

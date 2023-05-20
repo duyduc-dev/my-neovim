@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["codewindow.nvim"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/codewindow.nvim",
+    url = "https://github.com/gorbit99/codewindow.nvim"
+  },
   ["dressing.nvim"] = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/dressing.nvim",

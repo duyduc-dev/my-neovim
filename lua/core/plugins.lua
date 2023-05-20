@@ -140,6 +140,7 @@ return require("packer").startup(function(use)
 		end,
 		requires = "neovim/nvim-lspconfig",
 	})
+	use({ "gorbit99/codewindow.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
