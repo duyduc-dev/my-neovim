@@ -29,22 +29,13 @@ vim.cmd([[
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
 
-
-  "   autocmd!
-  "   autocmd FileType javascriptreact set filetype=javascript
-  "   " autocmd FileType typescriptscript set filetype=typescriptreact
-  " augroup END 
-
-
-  fun! IgnoreCamelCaseSpell()
-    syn match myExCapitalWords +\<\w*[A-Z]\K*\>+ contains=@NoSpell
-  endfun
-
   autocmd BufRead,BufNewFile * :call IgnoreCamelCaseSpell()
   " augroup _lsp
   "   autocmd!
   "   autocmd BufWritePre * lua vim.lsp.buf.format()
   " augroup end
+
+
 ]])
 
 -- Autoformat

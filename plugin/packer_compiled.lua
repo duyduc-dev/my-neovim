@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-tabnine"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
+    url = "https://github.com/tzachar/cmp-tabnine"
+  },
   ["cmp-vsnip"] = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
@@ -153,6 +158,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/dressing.nvim",
     url = "https://github.com/stevearc/dressing.nvim"
+  },
+  ["ejs-syntax"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/ejs-syntax",
+    url = "https://github.com/nikvdp/ejs-syntax"
+  },
+  ["emmet-ls"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/emmet-ls",
+    url = "https://github.com/aca/emmet-ls"
   },
   ["emmet-vim"] = {
     loaded = true,
@@ -203,6 +218,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lir.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15config.lir\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/opt/lir.nvim",
+    url = "https://github.com/tamago324/lir.nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
@@ -345,6 +368,11 @@ _G.packer_plugins = {
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
   },
+  ["tabnine-nvim"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/tabnine-nvim",
+    url = "https://github.com/codota/tabnine-nvim"
+  },
   ["tagalong.vim"] = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/tagalong.vim",
@@ -385,15 +413,30 @@ _G.packer_plugins = {
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/jiaoshijie/undotree"
   },
+  ["vim-closetag"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/vim-closetag",
+    url = "https://github.com/alvan/vim-closetag"
+  },
   ["vim-gutentags"] = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/vim-gutentags",
     url = "https://github.com/ludovicchabant/vim-gutentags"
   },
+  ["vim-html-template-literals"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/vim-html-template-literals",
+    url = "https://github.com/jonsmithers/vim-html-template-literals"
+  },
   ["vim-illuminate"] = {
     loaded = true,
     path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vim-javascript"] = {
+    loaded = true,
+    path = "/home/duyduc/.local/share/nvim/site/pack/packer/start/vim-javascript",
+    url = "https://github.com/pangloss/vim-javascript"
   },
   ["vim-js-file-import"] = {
     loaded = true,
@@ -427,6 +470,13 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-navic]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\23config.breadcrumbs\frequire\0", "config", "nvim-navic")
 time([[Config for nvim-navic]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au User DirOpened ++once lua require("packer.load")({'lir.nvim'}, { event = "User DirOpened" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

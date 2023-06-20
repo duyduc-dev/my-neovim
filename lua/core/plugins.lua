@@ -97,7 +97,6 @@ return require("packer").startup(function(use)
 
 	use({ "akinsho/toggleterm.nvim" })
 	use({ "windwp/nvim-ts-autotag" })
-	-- use("alvan/vim-closetag")
 	use("norcalli/nvim-colorizer.lua")
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -108,7 +107,7 @@ return require("packer").startup(function(use)
 	use({ "roobert/tailwindcss-colorizer-cmp.nvim" })
 
 	use("mattn/emmet-vim")
-	--use("aca/emmet-ls")
+	use("aca/emmet-ls")
 	use("dcampos/cmp-emmet-vim")
 	use("AndrewRadev/tagalong.vim")
 	use("axelvc/template-string.nvim")
@@ -141,6 +140,20 @@ return require("packer").startup(function(use)
 		requires = "neovim/nvim-lspconfig",
 	})
 	use({ "gorbit99/codewindow.nvim" })
+	use("jonsmithers/vim-html-template-literals")
+	use("pangloss/vim-javascript")
+	use("alvan/vim-closetag")
+	use({ "codota/tabnine-nvim", run = "./dl_binaries.sh" })
+	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+	use("nikvdp/ejs-syntax")
+	use({
+		"tamago324/lir.nvim",
+		config = function()
+			require("config.lir").setup()
+		end,
+		enabled = true,
+		event = "User DirOpened",
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

@@ -13,7 +13,7 @@ map("n", "<tab>", "<cmd>BufferLineCycleNext<cr>")
 map("n", "<s-tab>", "<cmd>BufferLineCyclePrev<cr>")
 
 -- save file
-map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>")
+map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w!<cr><esc>")
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh|NoiceDismiss<cr><esc>", { desc = "Escape and clear hlsearch" })
@@ -41,3 +41,8 @@ map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
 map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+
+-- Visual --
+-- Stay in indent mode
+map("v", "<", "<gv")
+map("v", ">", ">gv")

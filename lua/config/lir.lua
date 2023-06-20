@@ -5,7 +5,7 @@ M.config = function()
 	local actions = utils.require_on_exported_call("lir.actions")
 	local clipboard_actions = utils.require_on_exported_call("lir.clipboard.actions")
 
-	lvim.builtin.lir = {
+	M.lir = {
 		active = true,
 		on_config_done = nil,
 		icon = "",
@@ -92,28 +92,28 @@ function M.icon_setup()
 
 	devicons.set_icon({
 		lir_folder_icon = {
-			icon = lvim.builtin.lir.icon,
+			icon = M.lir.icon,
 			color = icon_hl,
 			name = "LirFolderNode",
 		},
 	})
 end
-
+local use_icons = true
 function M.setup()
 	local status_ok, lir = pcall(require, "lir")
 	if not status_ok then
 		return
 	end
 
-	if not lvim.use_icons then
-		lvim.builtin.lir.devicons.enable = false
+	if not use_icons then
+		M.lir.devicons.enable = false
 	end
 
-	lir.setup(lvim.builtin.lir)
+	lir.setup(M.lir)
 	M.icon_setup()
 
-	if lvim.builtin.lir.on_config_done then
-		lvim.builtin.lir.on_config_done(lir)
+	if M.lir.on_config_done then
+		M.lir.on_config_done(lir)
 	end
 end
 

@@ -79,10 +79,7 @@ local opts = {
 }
 
 local mappings = {
-	["b"] = {
-		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Buffers",
-	},
+
 	["e"] = { "<cmd>NvimTreeFocus<cr>", "Focus Explorer" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["w"] = { "<cmd>w!<CR>,", "Save" },
@@ -93,6 +90,15 @@ local mappings = {
 		"Find files",
 	},
 	["-"] = { "<cmd>NvimTreeCollapse<cr>", "Collapse folders in Explorer" },
+	b = {
+		name = "Buffer",
+		o = {
+			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"Buffers",
+		},
+		l = { "<cmd>BufferLineCloseLeft<cr>", "Close Buffer Left" },
+		r = { "<cmd>BufferLineCloseRight<cr>", "Close Buffer Right" },
+	},
 	m = {
 		name = "Minimap",
 		o = { "<cmd>lua require('codewindow').open_minimap()<cr>", "Open Minimap" },

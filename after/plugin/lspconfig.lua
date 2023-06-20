@@ -28,7 +28,8 @@ masonLspconfig.setup({
 	automatic_installation = true,
 })
 
-local on_attach = function(client, bufnr)
+local M = {}
+M.on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.lsp.omnifunc")
 
 	if client.server_capabilities.documentSymbolProvider then
@@ -38,16 +39,8 @@ local on_attach = function(client, bufnr)
 	illuminate.on_attach(client)
 end
 
-local servers = {
-	lua_ls = {
-		settings = {
-			Lua = {
-				diagnostics = {
-					globals = { "vim" },
-				},
-			},
-		},
-	},
+M.servers = {
+	lua_ls = require("lsp.providers.lua_ls"),
 	tsserver = {},
 	tailwindcss = {},
 	cssmodules_ls = {
@@ -58,9 +51,32 @@ local servers = {
 	cssls = {},
 	html = {},
 	jsonls = {},
+	emmet_ls = {
+		filetypes = {
+			"css",
+			"eruby",
+			"html",
+			"javascript",
+			"javascriptreact",
+			"less",
+			"sass",
+			"scss",
+			"svelte",
+			"pug",
+			"typescriptreact",
+			"vue",
+			"ejs",
+		},
+		init_options = {
+			html = {
+				options = {
+					-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+					["bem.enabled"] = true,
+				},
+			},
+		},
+	},
 }
-
-local M = {}
 
 M.capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 --M.capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -83,10 +99,46 @@ M.capabilities.textDocument.completion.completionItem = {
 	},
 }
 
-for key, _ in pairs(servers) do
-	nvim_lsp[key].setup({
-		on_attach = on_attach,
-		settings = servers[key],
+M.loadServer = function(options)
+	local opts = {
+		on_attach = M.on_attach,
 		capabilities = M.capabilities,
-	})
+	}
+	for key, value in pairs(options) do
+		opts[key] = value
+	end
+
+	return opts
 end
+
+for key, _ in pairs(M.servers) do
+	nvim_lsp[key].setup(M.loadServer(M.servers[key]))
+end
+
+-- nvim_lsp.emmet_ls.setup({
+-- 	filetypes = {
+-- 		"css",
+-- 		"eruby",
+-- 		"html",
+-- 		"javascript",
+-- 		"javascriptreact",
+-- 		"less",
+-- 		"sass",
+-- 		"scss",
+-- 		"svelte",
+-- 		"pug",
+-- 		"typescriptreact",
+-- 		"vue",
+-- 		"ejs",
+-- 	},
+-- 	init_options = {
+-- 		html = {
+-- 			options = {
+-- 				-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+-- 				["bem.enabled"] = true,
+-- 			},
+-- 		},
+-- 	},
+-- })
+--
+-- nvim_lsp.lua_ls.setup(M.loadServer(require("lsp.providers.lua_ls")))
